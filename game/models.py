@@ -58,3 +58,8 @@ class TileBag:
     
     def put(self, tiles):
         self.tiles.extend(tiles)
+#player emulation
+scrabble_game = TileBag()
+
+player_tiles = scrabble_game.take(7)
+print("Your tiles:", player_tiles)
