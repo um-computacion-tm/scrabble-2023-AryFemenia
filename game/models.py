@@ -48,7 +48,12 @@ class TileBag:
     def take(self, count):
         tiles = []
         for _ in range(count):
-            tiles.append(self.tiles.pop())
+            available_letters = [letter for letter in self.tiles if self.tiles[letter]['count'] > 0]
+            if not available_letters:
+                break
+            selected_letter = random.choice(available_letters)
+            tiles.append(selected_letter)
+            self.tiles[selected_letter]['count'] -= 1
         return tiles
     
     def put(self, tiles):
