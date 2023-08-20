@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+##[0.0.2] ~ 20-08-2023
+### Added
+- Dictionary with each value and how many of them there are based on Scrable international spanish(100 words).
+- A take method that asigns the random letters a player can take out the bag tiles.
+- An initial version of a player asigned tiles.
+- Small changes to the tests.
+
 ##[0.0.1] ~ 18-08-2023
 
 ### Added
