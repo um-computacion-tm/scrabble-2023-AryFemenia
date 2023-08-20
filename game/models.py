@@ -1,3 +1,4 @@
+#omit C+H instead of CH/2xL instead of LL/2xR instead of RR
 import random
 
 class Tile:
@@ -5,23 +6,50 @@ class Tile:
         self.letter = letter
         self.value = value
 
-
-class BagTiles:
+#Español 100 piezas(fuera de Norte America)
+class TileBag:
     def __init__(self):
-        self.tiles = [
-            Tile('A', 1),
-            Tile('A', 1),
-            Tile('A', 1),
-            Tile('A', 1),
-            Tile('A', 1),
-        ]
-        random.shuffle(self.tiles)
+        self.tiles = {
+            'A': {'value': 1, 'count': 12},
+            'B': {'value': 3, 'count': 2},
+            'C': {'value': 3, 'count': 4},
+            'CH': {'value': 3, 'count': 4},
+            'D': {'value': 2, 'count': 5},
+            'E': {'value': 1, 'count': 12},
+            'F': {'value': 4, 'count': 1},
+            'G': {'value': 2, 'count': 2},
+            'H': {'value': 4, 'count': 2},
+            'I': {'value': 1, 'count': 6},
+            'J': {'value': 8, 'count': 1},
+            'L': {'value': 1, 'count': 4},
+            'LL': {'value': 1, 'count': 4},
+            'M': {'value': 3, 'count': 2},
+            'N': {'value': 1, 'count': 5},
+            'Ñ': {'value': 8, 'count': 1},
+            'O': {'value': 1, 'count': 9},
+            'P': {'value': 3, 'count': 2},
+            'Q': {'value': 5, 'count': 1},
+            'R': {'value': 1, 'count': 5},
+            'RR': {'value': 1, 'count': 5},
+            'S': {'value': 1, 'count': 6},
+            'T': {'value': 1, 'count': 4},
+            'U': {'value': 1, 'count': 5},
+            'V': {'value': 4, 'count': 1},
+            'X': {'value': 8, 'count': 1},
+            'Y': {'value': 4, 'count': 1},
+            'Z': {'value': 10, 'count': 1},
+            '': {'value': 0, 'count': 2},
+        }
+        shuffled_keys = list(self.tiles.keys())
+        random.shuffle(shuffled_keys)
+        
+        self.tiles = {key: self.tiles[key] for key in shuffled_keys}
 
     def take(self, count):
         tiles = []
         for _ in range(count):
             tiles.append(self.tiles.pop())
         return tiles
-
+    
     def put(self, tiles):
         self.tiles.extend(tiles)
