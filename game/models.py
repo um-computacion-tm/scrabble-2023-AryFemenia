@@ -2,64 +2,122 @@
 import random
 
 class Tile:
-    def __init__(self, letter, value):
+    def __init__(self, letter, points):
         self.letter = letter
-        self.value = value
+        self.points = points
 
 #Español 100 piezas(fuera de Norte America)
 class TileBag:
     def __init__(self):
-        self.tiles = {
-            'A': {'value': 1, 'count': 12},
-            'B': {'value': 3, 'count': 2},
-            'C': {'value': 3, 'count': 4},
-            'CH': {'value': 3, 'count': 4},
-            'D': {'value': 2, 'count': 5},
-            'E': {'value': 1, 'count': 12},
-            'F': {'value': 4, 'count': 1},
-            'G': {'value': 2, 'count': 2},
-            'H': {'value': 4, 'count': 2},
-            'I': {'value': 1, 'count': 6},
-            'J': {'value': 8, 'count': 1},
-            'L': {'value': 1, 'count': 4},
-            'LL': {'value': 1, 'count': 4},
-            'M': {'value': 3, 'count': 2},
-            'N': {'value': 1, 'count': 5},
-            'Ñ': {'value': 8, 'count': 1},
-            'O': {'value': 1, 'count': 9},
-            'P': {'value': 3, 'count': 2},
-            'Q': {'value': 5, 'count': 1},
-            'R': {'value': 1, 'count': 5},
-            'RR': {'value': 1, 'count': 5},
-            'S': {'value': 1, 'count': 6},
-            'T': {'value': 1, 'count': 4},
-            'U': {'value': 1, 'count': 5},
-            'V': {'value': 4, 'count': 1},
-            'X': {'value': 8, 'count': 1},
-            'Y': {'value': 4, 'count': 1},
-            'Z': {'value': 10, 'count': 1},
-            '': {'value': 0, 'count': 2},
-        }
-        shuffled_keys = list(self.tiles.keys())
-        random.shuffle(shuffled_keys)
-        
-        self.tiles = {key: self.tiles[key] for key in shuffled_keys}
+        self.tiles = [
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('A', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('E', 1),
+            Tile('I', 1),
+            Tile('I', 1),
+            Tile('I', 1),
+            Tile('I', 1),
+            Tile('I', 1),
+            Tile('I', 1),
+            Tile('L', 1),
+            Tile('L', 1),
+            Tile('L', 1),
+            Tile('L', 1),
+            Tile('N', 1),
+            Tile('N', 1),
+            Tile('N', 1),
+            Tile('N', 1),
+            Tile('N', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('O', 1),
+            Tile('R', 1),
+            Tile('R', 1),
+            Tile('R', 1),
+            Tile('R', 1),
+            Tile('R', 1),
+            Tile('S', 1),
+            Tile('S', 1),
+            Tile('S', 1),
+            Tile('S', 1),
+            Tile('S', 1),
+            Tile('S', 1),
+            Tile('T', 1),
+            Tile('T', 1),
+            Tile('T', 1),
+            Tile('T', 1),
+            Tile('U', 1),
+            Tile('U', 1),
+            Tile('U', 1),
+            Tile('U', 1),
+            Tile('U', 1),
+            Tile('D', 2),
+            Tile('D', 2),
+            Tile('D', 2),
+            Tile('D', 2),
+            Tile('D', 2),
+            Tile('G', 2),
+            Tile('G', 2),
+            Tile('B', 3),
+            Tile('B', 3),
+            Tile('C', 3),
+            Tile('C', 3),
+            Tile('C', 3),
+            Tile('C', 3),
+            Tile('M', 3),
+            Tile('M', 3),
+            Tile('P', 3),
+            Tile('P', 3),
+            Tile('F', 4),
+            Tile('H', 4),
+            Tile('H', 4),
+            Tile('V', 4),
+            Tile('Y', 4),
+            Tile('CH',5),
+            Tile('Q', 5),
+            Tile('J', 8),
+            Tile('LL',8),
+            Tile('Ñ', 8),
+            Tile('RR',8),
+            Tile('X', 8),
+            Tile('Z',10),
+            Tile('joker', 0),
+            Tile('joker', 0),
+        ]
+        random.shuffle(self.tiles)
 
     def take(self, count):
         tiles = []
         for _ in range(count):
-            available_letters = [letter for letter in self.tiles if self.tiles[letter]['count'] > 0]
-            if not available_letters:
-                break
-            selected_letter = random.choice(available_letters)
-            tiles.append(selected_letter)
-            self.tiles[selected_letter]['count'] -= 1
+            tiles.append(self.tiles.pop())
         return tiles
-    
+
     def put(self, tiles):
         self.tiles.extend(tiles)
-#player emulation
-scrabble_game = TileBag()
-
-player_tiles = scrabble_game.take(7)
-print("Your tiles:", player_tiles)
