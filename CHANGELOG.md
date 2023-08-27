@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+##[0.0.4] ~ 27-08-2023
+### Added
+- Various modules to complete the bare game structure.
+- A main file to run the game.
+
+
 ##[0.0.3] ~ 24-08-2023
 ### Added
 - Player.
