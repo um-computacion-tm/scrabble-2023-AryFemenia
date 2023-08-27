@@ -4,8 +4,7 @@ All notable changes to this project will be documented in this file.
 ##[0.0.4] ~ 27-08-2023
 ### Added
 - Various modules to complete the bare game structure.
-- A main file to run the game.
-
+- A main file to run the game(by now the game gives the player a selection of tiles).
 
 ##[0.0.3] ~ 24-08-2023
 ### Added

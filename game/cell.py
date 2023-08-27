@@ -16,11 +16,3 @@ class Cell:
             return self.letter.value * self.multiplier
         else:
             return self.letter.value
-        
-    def calculate_value_word(self):
-        if self.letter is None:
-            return 0
-        if self.multiplier_type == 'letter':
-            return self.letter.value * self.multiplier
-        else:
-            return self.letter.value

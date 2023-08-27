@@ -21,12 +21,3 @@ class Board:
         for row in self.grid:
             print(' '.join(row))
             print('-' * (self.cols * 2 - 1))
-
-scrabble_board = Board(15, 15)
-# Colocar una palabra en el tablero en posición horizontal
-scrabble_board.place_word("python", 7, 5, 'horizontal')
-
-# Colocar otra palabra en el tablero en posición vertical
-scrabble_board.place_word("code", 5, 8, 'vertical')
-
-scrabble_board.display()
