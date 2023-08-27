@@ -1,16 +1,20 @@
 from models import TileBag
 
-def player_take_tiles(tile_bag, count):
-    if count > 0:
-        return tile_bag.take(count)
-    else:
-        return []
+class Player:
+    def __init__(self):
+        self.tiles = []
 
-tile_bag = TileBag()
+    def player_take_tiles(tile_bag, count):
+        if count > 0:
+            return tile_bag.take(count)
+        else:
+            return []
 
-tiles_taken = player_take_tiles(tile_bag, 7)
+    tile_bag = TileBag()
 
-for tile in tiles_taken:
-    print(f"Tile: {tile.letter}, Points: {tile.points}")
+    tiles_taken = player_take_tiles(tile_bag, 7)
 
-print(f"Remaining tiles in the bag: {len(tile_bag.tiles)}")
+    for tile in tiles_taken:
+        print(f"Tile: {tile.letter}, Points: {tile.points}")
+
+    print(f"Remaining tiles in the bag: {len(tile_bag.tiles)}")
