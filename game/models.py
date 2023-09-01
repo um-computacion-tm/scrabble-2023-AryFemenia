@@ -6,6 +6,18 @@ class Tile:
         self.letter = letter
         self.points = points
 
+class joker(Tile):
+    def __init__(self):
+        super().__init__('joker', 0)
+
+    def select_letter(self, selection):
+        selection = selection.upper()
+        for tile in self.tiles:
+            if selection == tile.letter:
+                self.letter = selection
+                self.points = tile.points
+                return True
+
 #Español 100 piezas(fuera de Norte America)
 class TileBag:
     def __init__(self):
@@ -108,8 +120,6 @@ class TileBag:
             Tile('RR',8),
             Tile('X', 8),
             Tile('Z',10),
-            Tile('joker', 0),
-            Tile('joker', 0),
         ]
         random.shuffle(self.tiles)
 

@@ -1,23 +1,16 @@
 from game.cell import Cell
 
 class Board:
-    def __init__(self, cols, rows):
-        self.cols = cols
-        self.rows = rows
-        self.grid = [
-            [' ' for _ in range(cols)] 
-            for _ in range(rows)
-        ]
+    def __init__(self):
+        self.grid = [[Cell(1, '') for _ in range(15)] for _ in range(15)]
 
-    def place_word(self, word, row, col, direction):
-        if direction == 'horizontal':
-            for i, letter in enumerate(word):
-                self.grid[row][col + i] = letter
-        elif direction == 'vertical':
-            for i, letter in enumerate(word):
-                self.grid[row + i][col] = letter
+def calculate_word_value(self):
+    value = 0
+    for row in self.grid:
+        for cell in row:
+            value += cell.calculate_points_letter()
+    return value
 
-    def display(self):
-        for row in self.grid:
-            print(' '.join(row))
-            print('-' * (self.cols * 2 - 1))
+    
+
+#tablero tiene los puntos de las palabras pero no es el q lo calcula(la celda es la que calcula)
