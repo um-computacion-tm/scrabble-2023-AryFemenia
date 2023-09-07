@@ -1,3 +1,6 @@
+#celdas del tablero
+#calcular valor palabra
+
 from game.cell import Cell
 
 class Board:
@@ -11,6 +14,8 @@ def calculate_word_value(self):
             value += cell.calculate_points_letter()
     return value
 
-    
+def word_inside_boad():
+    pass
 
-#tablero tiene los puntos de las palabras pero no es el q lo calcula(la celda es la que calcula)
+def word_out_of_board():
+    pass

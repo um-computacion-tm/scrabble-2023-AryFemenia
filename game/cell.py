@@ -1,3 +1,5 @@
+#añadir letra
+#calcular puntaje
 from game.models import Tile
 
 class Cell:
