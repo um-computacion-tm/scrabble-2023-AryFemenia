@@ -6,9 +6,9 @@ from game.models import Tile
 class TestCalculateWordValue(unittest.TestCase):
     def test_simple(self):
         word = [
-            Cell(letter=Tile('p', 3)),
-            Cell(letter=Tile('a', 1)),
-            Cell(letter=Tile('n', 1)),
+            Cell(letter='p', points=3),
+            Cell(letter='a', points=1),
+            Cell(letter='n', points=1),
         ]
         value = calculate_word_value(word)
         self.assertEqual(value, 5)
