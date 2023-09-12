@@ -1,5 +1,5 @@
-#añadir letra
-#calcular puntaje
+#añadir letra a cada celda
+#calcular puntaje segun multiplicador de letra
 from game.models import Tile
 
 class Cell:

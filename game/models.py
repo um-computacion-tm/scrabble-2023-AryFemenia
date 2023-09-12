@@ -1,6 +1,6 @@
-#omit C+H instead of CH/2xL instead of LL/2xR instead of RR
+#FALTA: omit C+H instead of CH/2xL instead of LL/2xR instead of RR
+#joker aparte porque  tiene puntaje variable
 import random
-
 class Tile:
     def __init__(self, letter, points):
         self.letter = letter
@@ -18,7 +18,6 @@ class joker(Tile):
                 self.points = tile.points
                 return True
 
-#Español 100 piezas(fuera de Norte America)
 class TileBag:
     def __init__(self):
         self.tiles = [

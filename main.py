@@ -1,5 +1,4 @@
 #
-
 from game.board import *
 
 def main():
@@ -17,7 +16,6 @@ def main():
 
     def put_words():
         pass
-
 
 if __name__ == '__main__':
     main()

@@ -1,6 +1,6 @@
-#celdas del tablero
+#dibujar celdas del tablero
 #calcular valor palabra
-
+#FALTA: calcular puntaje segun multiplicador de palabra
 from game.cell import Cell
 
 class Board:

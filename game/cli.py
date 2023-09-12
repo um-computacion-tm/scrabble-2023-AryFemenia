@@ -1,5 +1,5 @@
 #interfaz visual
-from game.scrabble import Scrabble
+from game.scrabble import ScrabbleGame
 
 def main():
     pass
