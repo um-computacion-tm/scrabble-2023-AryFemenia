@@ -2,7 +2,7 @@
 #logica de siguiente jugador
 from game.board import Board
 from game.player import Player
-from game.models import TileBag
+from game.bagtiles import TileBag
 
 class ScrabbleGame:
     def __init__(self, players_count: int):
@@ -18,3 +18,6 @@ class ScrabbleGame:
             self.current_player = self.players[0]
         else:
             self.current_player = self.players[self.players.index(self.current_player) + 1]
+
+            # self.current_player_index = (self.current_player_index + 1) % len(self.players)
+            # self.current_player = self.players[self.current_player_index]

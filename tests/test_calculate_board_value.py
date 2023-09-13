@@ -1,7 +1,7 @@
 import unittest
 from game.board import calculate_word_value
 from game.cell import Cell
-from game.models import Tile
+from game.bagtiles import Tile
 
 class TestCalculateWordValue(unittest.TestCase):
     def test_simple(self):

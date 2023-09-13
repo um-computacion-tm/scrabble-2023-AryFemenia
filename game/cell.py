@@ -1,6 +1,6 @@
 #añadir letra a cada celda
 #calcular puntaje segun multiplicador de letra
-from game.models import Tile
+from game.bagtiles import Tile
 
 class Cell:
     def __init__(self, multiplier=1, multiplier_type=''):

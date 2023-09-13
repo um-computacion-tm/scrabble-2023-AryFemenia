@@ -1,5 +1,5 @@
 #
-from models import TileBag
+from game.bagtiles import TileBag
 
 class Player:
     def __init__(self, name, points):

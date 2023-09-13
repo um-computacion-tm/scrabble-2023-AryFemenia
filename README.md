@@ -13,4 +13,6 @@ The game is played by two to four players on a square game board imprinted with 
 
 
 
-## [Go back to top of this page](#Scrabble)
+## Author
+
+Ary Femenía

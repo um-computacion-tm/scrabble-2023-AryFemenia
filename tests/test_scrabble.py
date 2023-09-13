@@ -20,6 +20,7 @@ class TestScrabbleGame(unittest.TestCase):
         self.assertEqual(len(game.players), 4)
         self.assertIsNotNone(game.bag_tiles)
         self.assertIsNotNone(game.dictionary)
+
     def test_next_turn_when_game_is_starting(self):
         #validadr que al comienzo, el turno es del jugador 0
         scrabble_game = ScrabbleGame(players_count=3)
