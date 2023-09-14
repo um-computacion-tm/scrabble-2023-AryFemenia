@@ -6,25 +6,38 @@ from game.bagtiles import Tile
 
 class Board:
     def __init__(self):
-        self.grid = [[Cell(1, '') for _ in range(15)] for _ in range(15)]
+        self.grid = [[None for _ in range(15)] for _ in range(15)]
 
-    def calculate_word_value(self, word):
-        value = 0
+    def is_empty(self):
+        for row in self.grid:
+            for tile in row:
+                if tile is not None:
+                    return False
+        return True
+    
+    @staticmethod
+    def calculate_word_value(word: list[Cell]) -> int:
+        value: int = 0
+        multiplier_word = None
         for cell in word:
             value += cell.calculate_value()
-        for cell in word:
-            if cell.multiplier_type == 'word':
-                value *= cell.multiplier
-                cell.multiplier = 1
+            if cell.multiplier_type == 'word' and cell.active:
+                multiplier_word = cell.multiplier
+        if multiplier_word:
+            value *= multiplier_word
         return value
 
-    def word_in_of_boad(self, word, location, orientation):
+    def validate_word_inside_board(self, word, location, orientation):
+        row, col = location
         if orientation == "H":
-            return len(word) <= len(self.grid) - location[0]
+            if col + len(word) <= len(self.grid) and row < len(self.grid):
+                return True
         else:
-            return len(word) <= len(self.grid) - location[1]
+            if row + len(word) <= len(self.grid) and col < len(self.grid):
+                return True
+        return False
 
-    def word_out_of_board(self, word, location, orientation):
+    def validate_word_out_of_board(self, word, location, orientation):
         if orientation == "H":
             if len(word) > len(self.grid) - location[0]:
                 return False 
@@ -39,6 +52,7 @@ class Board:
                     return False
         return True
 
-    def validate_len_of_word(self, word):
-        if len(word) > 7:
-            return False
+    #WIP
+    # def validate_len_of_word(self, word):
+    #     if len(word) > 7:
+    #         return False

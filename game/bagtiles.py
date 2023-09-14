@@ -16,7 +16,7 @@ class joker(Tile):
             if selection == tile.letter:
                 self.letter = selection
                 self.points = tile.points
-                return True
+        return True
 
 class TileBag:
     def __init__(self):
