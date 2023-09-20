@@ -18,11 +18,11 @@ class TestBoard(unittest.TestCase):
     def test_board_is_empty(self):
         board = Board()
         assert board.is_empty() == True
-    '''
+    
     def test_board_is_not_empty(self):
         board = Board()
         board.grid[7][7].add_letter(Tile("A", 1))
-        assert board.is_empty() == False''' 
+        assert board.is_empty() == False
     #3con el board NO vacio que la palabra este dentro del board
     def test_word_inside_board(self):
         board = Board()
