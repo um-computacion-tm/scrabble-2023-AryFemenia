@@ -44,7 +44,7 @@ class TestBoard(unittest.TestCase):
 
         assert word_is_valid == False
 
-'''
+
     #4teniendo el board vacio, que la palabra se pueda poner en el board(vert u horiz)
     def test_place_word_empty_board_horizontal_fine(self):
         board = Board()
@@ -77,6 +77,8 @@ class TestBoard(unittest.TestCase):
         orientation = "V"
         word_is_valid = board.validate_word_place_board(word, location, orientation)
         assert word_is_valid == False
+
+'''
     #5teniendo el board NO vacio, que la palabra se pueda poner en el board(vert u horiz)
     def test_place_word_not_empty_board_horizontal_fine(self):
         board = Board()
