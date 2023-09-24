@@ -7,5 +7,9 @@ class Player:
         self.points = points
         self.slug = []
 
-    def player_take_tiles(self, tiles[]):
+    def player_take_tiles(self, tile_bag, count):
+        tiles = tile_bag.take(count)
         self.slug.extend(tiles)
+
+    def player_return_tiles(self, tiles):
+        self.slug.remove(tiles)
