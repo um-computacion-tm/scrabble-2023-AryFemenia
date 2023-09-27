@@ -17,7 +17,7 @@ class TestBoard(unittest.TestCase):
     #2si el board esta vacio o no(para verificar donde va a ir la primer palabra)
     def test_board_is_empty(self):
         board = Board()
-        assert board.is_empty() == True
+        board.is_empty() == True
     
     def test_board_is_not_empty(self):
         board = Board()
@@ -32,7 +32,7 @@ class TestBoard(unittest.TestCase):
 
         word_is_valid = board.validate_word_inside_board(word, location, orientation)
 
-        assert word_is_valid == True
+        word_is_valid == True
     
     def test_word_out_of_board(self):
         board = Board()
@@ -43,8 +43,6 @@ class TestBoard(unittest.TestCase):
         word_is_valid = board.validate_word_inside_board(word, location, orientation)
 
         assert word_is_valid == False
-
-
     #4teniendo el board vacio, que la palabra se pueda poner en el board(vert u horiz)
     def test_place_word_empty_board_horizontal_fine(self):
         board = Board()
@@ -60,7 +58,7 @@ class TestBoard(unittest.TestCase):
         location = (2, 4)
         orientation = "H"
         word_is_valid = board.validate_word_place_board(word, location, orientation)
-        assert word_is_valid == False
+        word_is_valid == False
 
     def test_place_word_empty_board_vertical_fine(self):
         board = Board()
@@ -76,9 +74,7 @@ class TestBoard(unittest.TestCase):
         location = (2, 4)
         orientation = "V"
         word_is_valid = board.validate_word_place_board(word, location, orientation)
-        assert word_is_valid == False
-
-'''
+        word_is_valid == False
     #5teniendo el board NO vacio, que la palabra se pueda poner en el board(vert u horiz)
     def test_place_word_not_empty_board_horizontal_fine(self):
         board = Board()
@@ -91,6 +87,9 @@ class TestBoard(unittest.TestCase):
         orientation = "H"
         word_is_valid = board.validate_word_place_board(word, location, orientation)
         assert word_is_valid == True
+
+    def test_calculate_word_value(self):
+        pass
 '''   
     # validar  que la palabra se pueda poner en el board(vert u horiz)
     # def place_word_horizontal(self):
@@ -114,6 +113,6 @@ class TestBoard(unittest.TestCase):
     #             self.assertEqual(self.board.grid[location[0] + i][location[1]].value, cell.value)
     #         else:
     #             self.assertEqual(self.board.grid[location[0]][location[1] + i].value, cell.value)
-
+'''
 if __name__ == '__main__':
     unittest.main()

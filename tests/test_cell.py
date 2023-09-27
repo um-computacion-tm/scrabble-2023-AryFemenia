@@ -18,7 +18,7 @@ class TestCell(unittest.TestCase):
             cell.calculate_points_letter(),
             0,
         )
-
+    #1 añadir letra a cada celda
     def test_add_letter(self):
         cell = Cell(multiplier=1, multiplier_type='')
         letter = Tile(letter='p', points=3)
@@ -46,8 +46,6 @@ class TestCell(unittest.TestCase):
             cell.calculate_points_letter(),
             3,
         )
-
-
 
 if __name__ == '__main__':
     unittest.main()

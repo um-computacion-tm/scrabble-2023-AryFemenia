@@ -10,7 +10,7 @@ class Cell:
 
     def add_letter(self, letter:Tile):
         self.letter = letter
-
+        
     def calculate_points_letter(self):
         if self.letter is None:
             return 0
