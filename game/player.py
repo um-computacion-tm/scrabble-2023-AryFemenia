@@ -13,3 +13,11 @@ class Player:
 
     def player_return_tiles(self, tiles):
         self.slug.remove(tiles)
+
+    def has_letters(self, tiles):
+        for tile in tiles:
+            if tile not in self.slug:
+                return False
+            else:
+                self.player_return_tiles(tile)
+        return True
