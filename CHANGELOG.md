@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+##[0.0.6] ~ 
+
+
+
 ##[0.0.5] ~ 03-09-2023
 ### Added
 - Module Board.
