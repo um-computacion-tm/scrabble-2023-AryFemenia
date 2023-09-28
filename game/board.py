@@ -48,12 +48,6 @@ class Board:
                     self.grid[row + i][col].add_letter(Tile(word[i], 1))
                 return True
         return False
-    
-    
-
-    
-
-
 
     @staticmethod
     def calculate_word_value(word: list[Cell]) -> int:
@@ -66,10 +60,6 @@ class Board:
         if multiplier_word:
             value *= multiplier_word
         return value
-
-    
-
-
 
     #WIP
     # def validate_len_of_word(self, word):
