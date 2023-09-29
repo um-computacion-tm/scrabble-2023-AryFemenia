@@ -90,6 +90,32 @@ class TestBoard(unittest.TestCase):
 
     def test_calculate_word_value(self):
         pass
+
+    def test_show_board(self):
+        board = Board()
+        board.show_board()
+
+    def test_show_board_with_word(self):
+        board = Board()
+        board.grid[7][7].letter = Tile('h',4)
+        board.grid[7][8].letter = Tile('o',1)
+        board.grid[7][9].letter = Tile('l',1)
+        board.grid[7][10].letter = Tile('a',1)
+
+    def test_show_board_with_words(self):
+
+        board = Board()
+        board.grid[7][7].letter = Tile('h',4)
+        board.grid[7][8].letter = Tile('o',1)
+        board.grid[7][9].letter = Tile('l',1)
+        board.grid[7][10].letter = Tile('a',1)
+
+        board = Board()
+        board.grid[7][7].letter = Tile('h',4)
+        board.grid[8][7].letter = Tile('o',1)
+        board.grid[9][7].letter = Tile('l',1)
+        board.grid[10][7].letter = Tile('a',1)
+
 '''   
     # validar  que la palabra se pueda poner en el board(vert u horiz)
     # def place_word_horizontal(self):
